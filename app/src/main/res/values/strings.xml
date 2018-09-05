@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name">CoinBalance</string>
-    <string name="report_email">coinbalance.supp@gmail.com</string>
-    <string name="report_subject">CoinBalance %1$s.%2$d </string>
+    <string name="app_name">Hodlify</string>
+    <string name="report_email">hodlifyapp@gmail.com</string>
+    <string name="report_subject">Hodlify %1$s.%2$d </string>
     <string name="market_uri">market://details?id=%s</string>
     <string name="play_store_uri">http://play.google.com/store/apps/details?id=%s</string>
 
@@ -44,13 +44,13 @@
     <string name="wallet_empty_message">No wallets available</string>
     <string name="permission_storage_rationale">App needs storage access to import/export config</string>
     <string name="api_keys_agreement_title">API keys agreement</string>
-    <string name="api_keys_agreement_message">By adding API keys/secrets you agree that every key/secret has <b>READ ONLY</b> permissions on your exchange account.\n\n<b>CoinBalance is not responsible for your keys</b></string>
+    <string name="api_keys_agreement_message">By adding API keys/secrets you agree that every key/secret has <b>READ ONLY</b> permissions on your exchange account.\n\n<b>Hodlify is not responsible for your keys</b></string>
     <string name="agree">I agree</string>
     <string name="disagree">I disagree</string>
 
     <string name="error_how_to_fix_issues">How to fix some common issues</string>
-    <string name="wallet_error_common_issues">&#x2022; Make sure that your wallet address is valid\n&#x2022; Make sure that you have stable internet connection\n&#x2022; Maybe block explorer that I use to retrieve wallet balance temporary unavailable. Try to refresh later\n&#x2022; You can write me. I will help you &#x263a;\n  <b>coinbalance.supp@gmail.com</b></string>
-    <string name="exchange_error_common_issues">&#x2022; Make sure that your API key and secret are valid\n&#x2022; Make sure that your API is activated\n&#x2022; Make sure that your API key has read balance permissions\n&#x2022; Make sure that your API has never been used in another services and only used by CoinBalance\n&#x2022; Make sure you are not connected via VPN. Some exchanges not allow\n&#x2022; You can write me. I will help you &#x263a;\n  <b>coinbalance.supp@gmail.com</b></string>
+    <string name="wallet_error_common_issues">&#x2022; Make sure that your wallet address is valid\n&#x2022; Make sure that you have stable internet connection\n&#x2022; Maybe block explorer that I use to retrieve wallet balance temporary unavailable. Try to refresh later\n&#x2022; You can write me. I will help you &#x263a;\n  <b>hodlifyappp@gmail.com</b></string>
+    <string name="exchange_error_common_issues">&#x2022; Make sure that your API key and secret are valid\n&#x2022; Make sure that your API is activated\n&#x2022; Make sure that your API key has read balance permissions\n&#x2022; Make sure that your API has never been used in another services and only used by Hodlify\n&#x2022; Make sure you are not connected via VPN. Some exchanges not allow\n&#x2022; You can write me. I will help you &#x263a;\n  <b>hodlifyapp@gmail.com</b></string>
 
     <string name="settings_currency">Profile currency</string>
     <string name="settings_export_config">Export config</string>
@@ -78,7 +78,7 @@
     <string name="tokens">Tokens</string>
     <string name="assets">Assets</string>
 
-    <string name="share_text_format">Try CoinBalance app %s</string>
+    <string name="share_text_format">Try Hodlify app %s</string>
     <string name="send_email">Send email</string>
 
     <string name="change_24">24h</string>
