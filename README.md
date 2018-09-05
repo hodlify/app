@@ -1,4 +1,4 @@
-[![CircleCI](https://circleci.com/gh/NikitaZhelonkin/CoinBalance.svg?style=svg)](https://circleci.com/gh/NikitaZhelonkin/CoinBalance)
+[![CircleCI](https://circleci.com/gh/hodlify/app.svg?style=svg)](https://circleci.com/gh/hodlify/app)
 # Hodlify - cryptocurrency wallet tracker
 
 
