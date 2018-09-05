@@ -11,8 +11,8 @@ android {
         applicationId "app.hodlify"
         minSdkVersion 21
         targetSdkVersion 28
-        versionCode 17
-        versionName "2.0.${versionCode}"
+        versionCode 18
+        versionName "1.0.${versionCode}"
         archivesBaseName = "hodlify-${versionName}"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
