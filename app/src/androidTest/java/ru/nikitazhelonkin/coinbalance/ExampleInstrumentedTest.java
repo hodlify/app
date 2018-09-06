@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("ru.nikitazhelonkin.cryptobalance", appContext.getPackageName());
+        assertEquals("app.hodlify", appContext.getPackageName());
     }
 }

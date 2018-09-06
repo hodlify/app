@@ -8,12 +8,12 @@ keystoreProperties.load(new FileInputStream(file("keystore.properties")))
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "ru.nikitazhelonkin.coinbalance"
+        applicationId "app.hodlify"
         minSdkVersion 21
         targetSdkVersion 28
-        versionCode 16
-        versionName "2.0.${versionCode}"
-        archivesBaseName = "coinbalance-${versionName}"
+        versionCode 18
+        versionName "1.0.${versionCode}"
+        archivesBaseName = "hodlify-${versionName}"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
         buildConfigField "String", "YANDEX_METRICA_API_KEY", '"3b1bb4cf-e707-4a22-bdc2-f87a69f29128"'
