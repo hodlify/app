@@ -38,13 +38,13 @@
     <string name="wallet_empty_message">Добавьте хотя бы один кошелек</string>
     <string name="permission_storage_rationale">Необходим доступ для экспорта/импорта данных</string>
     <string name="api_keys_agreement_title">Соглашение</string>
-    <string name="api_keys_agreement_message">Добавляя API ключи вы согласны, что каждый ключ имеет разрешение только на <b>ЧТЕНИЕ</b> данных вашего акканута.\n\n<b>CoinBalance не несет ответственность за ваши API ключи</b></string>
+    <string name="api_keys_agreement_message">Добавляя API ключи вы согласны, что каждый ключ имеет разрешение только на <b>ЧТЕНИЕ</b> данных вашего акканута.\n\n<b>Hodlify не несет ответственность за ваши API ключи</b></string>
     <string name="agree">Согласен</string>
     <string name="disagree">Не согласен</string>
 
     <string name="error_how_to_fix_issues">Как исправить распространненные ошибки</string>
-    <string name="wallet_error_common_issues">&#x2022; Убедитесь что правильно ввели адрес кошелька\n&#x2022; Убедитесь что имеете стабильное подключение к сети Интернет\n&#x2022; Может быть block explorer который я использую для получения данный временно недоступен. Попробуйте обновить данные позже\n&#x2022; Вы можете написать мне, я помогу &#x263a;\n  <b>coinbalance.supp@gmail.com</b></string>
-    <string name="exchange_error_common_issues">&#x2022; Убедитесь что правильно ввели API key и secret\n&#x2022; Убедитесь что API key активирован\n&#x2022; Убедитесь что данный API key имеет соответствующий доступ\n&#x2022; Убедитесь что данный API key не использовался в других сервисах кроме CoinBalance\n&#x2022; Убедитесь что не подключены через VPN\n&#x2022; Вы можете написать мне, я помогу&#x263a;\n  <b>coinbalance.supp@gmail.com</b></string>
+    <string name="wallet_error_common_issues">&#x2022; Убедитесь что правильно ввели адрес кошелька\n&#x2022; Убедитесь что имеете стабильное подключение к сети Интернет\n&#x2022; Может быть block explorer который я использую для получения данный временно недоступен. Попробуйте обновить данные позже\n&#x2022; Вы можете написать мне, я помогу &#x263a;\n  <b>hodlifyapp@gmail.com</b></string>
+    <string name="exchange_error_common_issues">&#x2022; Убедитесь что правильно ввели API key и secret\n&#x2022; Убедитесь что API key активирован\n&#x2022; Убедитесь что данный API key имеет соответствующий доступ\n&#x2022; Убедитесь что данный API key не использовался в других сервисах кроме Hodlify\n&#x2022; Убедитесь что не подключены через VPN\n&#x2022; Вы можете написать мне, я помогу&#x263a;\n  <b>hodlifyapp@gmail.com</b></string>
 
     <string name="settings_currency">Валюта портфеля</string>
     <string name="settings_export_config">Экспорт данных</string>
@@ -71,7 +71,7 @@
     <string name="tokens">Токены</string>
     <string name="assets">Активы</string>
 
-    <string name="share_text_format">Попробуй трекер криптовалют - CoinBalance %s</string>
+    <string name="share_text_format">Попробуй трекер криптовалют - Hodlify %s</string>
     <string name="send_email">Отправить E-mail</string>
 
     <string name="change_24">24ч</string>
