@@ -44,6 +44,7 @@ import ru.nikitazhelonkin.coinbalance.ui.widget.itemtouchhelper.ItemTouchHelperC
 import ru.nikitazhelonkin.coinbalance.utils.AndroidUtils;
 import ru.nikitazhelonkin.coinbalance.utils.AppNumberFormatter;
 import ru.nikitazhelonkin.coinbalance.utils.ChartColorPallet;
+import ru.nikitazhelonkin.coinbalance.utils.CurrencySymbol;
 import ru.nikitazhelonkin.coinbalance.utils.ListUtils;
 
 public class MainActivity extends MvpActivity<MainPresenter, MainView> implements
@@ -212,9 +213,9 @@ public class MainActivity extends MvpActivity<MainPresenter, MainView> implement
 
     @Override
     public void setTotalBalance(String currencyStr, float totalBalance) {
-        Currency currency = Currency.getInstance(currencyStr);
+        String currencySymbol = CurrencySymbol.forCurrency(currencyStr);
         String currencyBalanceStr = AppNumberFormatter.format(totalBalance);
-        mTotalBalanceChart.setText(String.format(Locale.US, "%s %s", currency.getSymbol(), currencyBalanceStr));
+        mTotalBalanceChart.setText(String.format(Locale.US, "%s %s", currencySymbol, currencyBalanceStr));
     }
 
     @Override

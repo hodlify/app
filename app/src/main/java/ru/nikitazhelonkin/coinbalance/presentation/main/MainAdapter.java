@@ -31,6 +31,7 @@ import ru.nikitazhelonkin.coinbalance.ui.text.Spanner;
 import ru.nikitazhelonkin.coinbalance.ui.widget.itemtouchhelper.ItemTouchHelperAdapter;
 import ru.nikitazhelonkin.coinbalance.ui.widget.itemtouchhelper.ItemTouchHelperViewHolder;
 import ru.nikitazhelonkin.coinbalance.utils.AppNumberFormatter;
+import ru.nikitazhelonkin.coinbalance.utils.CurrencySymbol;
 
 public class MainAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> implements
         ItemTouchHelperAdapter {
@@ -153,14 +154,14 @@ public class MainAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> i
 
         private void bind(Wallet wallet) {
             Coin coin = mData.getCoin(wallet.getCoinTicker());
-            Currency currency = Currency.getInstance(mData.getCurrency());
+            String currencySymbol = CurrencySymbol.forCurrency(mData.getCurrency());
             boolean statusOk = wallet.getStatus() == Wallet.STATUS_OK;
             boolean statusPending = wallet.getStatus() == Wallet.STATUS_NONE;
 
             float currencyBalance = mData.getWalletBalanceWithTokens(wallet);
             String currencyBalanceStr = AppNumberFormatter.format(currencyBalance);
 
-            currencyBalanceView.setText(String.format(Locale.US, "%s %s", currency.getSymbol(), currencyBalanceStr));
+            currencyBalanceView.setText(String.format(Locale.US, "%s %s", currencySymbol, currencyBalanceStr));
             Spanner.from(String.format(Locale.US, "%.4f %s", wallet.getBalance(), coin.getTicker()))
                     .style(coin.getTicker(), new ForegroundColorSpan(mTextColorSecondary))
                     .applyTo(balanceView);
@@ -225,7 +226,7 @@ public class MainAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> i
         }
 
         private void bind(Exchange exchange) {
-            Currency currency = Currency.getInstance(mData.getCurrency());
+            String currencySymbol = CurrencySymbol.forCurrency(mData.getCurrency());
             boolean statusOk = exchange.getStatus() == Wallet.STATUS_OK;
             boolean statusPending = exchange.getStatus() == Wallet.STATUS_NONE;
 
@@ -236,7 +237,7 @@ public class MainAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> i
             int assetsCount = balanceList != null ? balanceList.size() : 0;
             String assetCountString = getContext().getResources().getQuantityString(R.plurals.assets_count, assetsCount, assetsCount);
             exchangeAssets.setText(assetCountString);
-            currencyBalanceView.setText(String.format(Locale.US, "%s %s", currency.getSymbol(), currencyBalanceStr));
+            currencyBalanceView.setText(String.format(Locale.US, "%s %s", currencySymbol, currencyBalanceStr));
 
             Spanner.from(String.format(Locale.US, "%.4f %s", balance, Coin.BTC.getTicker()))
                     .style(Coin.BTC.getTicker(), new ForegroundColorSpan(mTextColorSecondary))

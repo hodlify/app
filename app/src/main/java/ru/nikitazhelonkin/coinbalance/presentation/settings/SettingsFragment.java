@@ -42,7 +42,7 @@ public class SettingsFragment extends MvpFragment<SettingsPresenter, SettingsVie
     private static final int RC_FILE = 1;
     private static final int RC_PERMISSIONS = 2;
 
-    private static final String[] CURRENCIES = {"USD", "EUR", "GBP", "INR", "CNY", "JPY", "RUB"};
+    private static final String[] CURRENCIES = {"BTC", "USD", "EUR", "GBP", "INR", "CNY", "JPY", "RUB"};
 
     @BindView(R.id.toolbar)
     Toolbar mToolbar;
@@ -142,7 +142,7 @@ public class SettingsFragment extends MvpFragment<SettingsPresenter, SettingsVie
         arrayAdapter.addAll(CURRENCIES);
 
         String currentCurrency = AppSettings.get(getContext()).getCurrency();
-        int currentPosition =  arrayAdapter.getPosition( currentCurrency);
+        int currentPosition = arrayAdapter.getPosition(currentCurrency);
 
         new AlertDialogBuilder(getContext())
                 .setSingleChoiceItems(arrayAdapter, currentPosition, null)

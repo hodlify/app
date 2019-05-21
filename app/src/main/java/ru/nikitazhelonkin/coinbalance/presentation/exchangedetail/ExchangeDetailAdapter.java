@@ -21,6 +21,7 @@ import ru.nikitazhelonkin.coinbalance.data.entity.ExchangeBalance;
 import ru.nikitazhelonkin.coinbalance.data.entity.ExchangeDetailViewModel;
 import ru.nikitazhelonkin.coinbalance.ui.text.Spanner;
 import ru.nikitazhelonkin.coinbalance.utils.AppNumberFormatter;
+import ru.nikitazhelonkin.coinbalance.utils.CurrencySymbol;
 
 public class ExchangeDetailAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
@@ -91,14 +92,14 @@ public class ExchangeDetailAdapter extends RecyclerView.Adapter<RecyclerView.Vie
 
         public void bind() {
             List<ExchangeBalance> balanceList = mModel.getExchangeBalanceList();
-            Currency currency = Currency.getInstance(mModel.getPrices().getCurrency());
+            String currencySymbol = CurrencySymbol.forCurrency(mModel.getPrices().getCurrency());
 
             float currencyBalance = mModel.getBalance(balanceList);
             float balance = currencyBalance / mModel.getPriceValue(Coin.BTC.getTicker());
 
             String currencyBalanceStr = AppNumberFormatter.format(currencyBalance);
 
-            mFiatValue.setText(String.format(Locale.US, "%s %s", currency.getSymbol(), currencyBalanceStr));
+            mFiatValue.setText(String.format(Locale.US, "%s %s", currencySymbol, currencyBalanceStr));
 
             Spanner.from(String.format(Locale.US, "%.4f %s", balance, Coin.BTC.getTicker()))
                     .style(Coin.BTC.getTicker(), new ForegroundColorSpan(mTextColorSecondary))

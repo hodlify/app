@@ -22,6 +22,7 @@ import ru.nikitazhelonkin.coinbalance.data.entity.Wallet;
 import ru.nikitazhelonkin.coinbalance.data.entity.WalletDetailViewModel;
 import ru.nikitazhelonkin.coinbalance.ui.text.Spanner;
 import ru.nikitazhelonkin.coinbalance.utils.AppNumberFormatter;
+import ru.nikitazhelonkin.coinbalance.utils.CurrencySymbol;
 import ru.nikitazhelonkin.coinbalance.utils.L;
 
 public class WalletDetailAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
@@ -112,12 +113,12 @@ public class WalletDetailAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
 
             mWalletAddressView.setText(wallet.getAddress());
 
-            Currency currency = Currency.getInstance(mWalletModel.getCurrency());
+            String currencySymbol = CurrencySymbol.forCurrency(mWalletModel.getCurrency());
 
             float fiatBalance = mWalletModel.getPrices().getPriceValue(coin.getTicker()) * wallet.getBalance();
             String fiatBalanceStr = AppNumberFormatter.format(fiatBalance);
 
-            mFiatValue.setText(String.format(Locale.US, "%s %s", currency.getSymbol(), fiatBalanceStr));
+            mFiatValue.setText(String.format(Locale.US, "%s %s", currencySymbol, fiatBalanceStr));
 
             Spanner.from(String.format(Locale.US, "%.4f %s", wallet.getBalance(), coin.getTicker()))
                     .style(coin.getTicker(), new ForegroundColorSpan(mTextColorSecondary))

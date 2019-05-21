@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import java.util.Currency;
 import java.util.List;
 import java.util.Locale;
 
@@ -20,6 +19,7 @@ import ru.nikitazhelonkin.coinbalance.ui.widget.PieChartView;
 import ru.nikitazhelonkin.coinbalance.ui.widget.TintDrawableTextView;
 import ru.nikitazhelonkin.coinbalance.utils.AppNumberFormatter;
 import ru.nikitazhelonkin.coinbalance.utils.ChartColorPallet;
+import ru.nikitazhelonkin.coinbalance.utils.CurrencySymbol;
 
 public class AssetsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
@@ -108,7 +108,7 @@ public class AssetsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
         }
 
         public void bind(AssetItem assetItem, int position) {
-            Currency currency = Currency.getInstance(assetItem.getCurrency());
+            String symbol = CurrencySymbol.forCurrency(assetItem.getCurrency());
             float change24 = assetItem.getChange24();
             int trendColor = change24 > 0 ? mColorTrendUp :
                     change24 < 0 ? mColorTrendDown : mColorTrendNone;
@@ -116,14 +116,14 @@ public class AssetsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
                     change24 < 0 ? R.drawable.ic_trending_down_24dp : 0;
             mAssetNameView.setText(assetItem.getCoin());
             String currencyBalanceStr = AppNumberFormatter.format(assetItem.getCurrencyBalance());
-            mAssetValueView.setText(String.format(Locale.US, "%s %s", currency.getSymbol(), currencyBalanceStr));
+            mAssetValueView.setText(String.format(Locale.US, "%s %s", symbol, currencyBalanceStr));
             mAssetCryptoValueView.setText(String.format(Locale.US, "%.4f", assetItem.getBalance()));
             mAssetPercentView.setText(String.format(Locale.US, "%.1f %%", assetItem.getPercent()));
             mAssetColorView.setBackgroundColor(assetItem.getPercent() >= PieChartView.MIN_PERCENT ?
                     ChartColorPallet.colorForPosition(position) : PieChartView.OTHER_COLOR);
 
             String priceStr = AppNumberFormatter.format(assetItem.getPrice());
-            mAssetPriceView.setText(String.format(Locale.US, "%s %s", currency.getSymbol(), priceStr));
+            mAssetPriceView.setText(String.format(Locale.US, "%s %s", symbol, priceStr));
             mAssetChange24View.setText(String.format(Locale.US, "%.1f %%", Math.abs(assetItem.getChange24())));
             mAssetChange24View.setTextColor(trendColor);
             mAssetChange24View.setCompoundDrawableTint(trendColor);
