@@ -8,7 +8,7 @@ import javax.inject.Inject;
 import io.reactivex.Completable;
 import io.reactivex.Observable;
 import io.reactivex.Single;
-import ru.nikitazhelonkin.coinbalance.data.api.client.coin.ApiClientProvider;
+import ru.nikitazhelonkin.coinbalance.data.api.coin.ApiClientProvider;
 import ru.nikitazhelonkin.coinbalance.data.entity.Coin;
 import ru.nikitazhelonkin.coinbalance.data.entity.Token;
 import ru.nikitazhelonkin.coinbalance.data.entity.Wallet;

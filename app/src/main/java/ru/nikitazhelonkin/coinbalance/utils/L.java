@@ -9,20 +9,22 @@ import ru.nikitazhelonkin.coinbalance.BuildConfig;
 
 public class L {
 
+    private static final boolean ENABLED = BuildConfig.DEBUG;
+
     public static void d(String tag, String message) {
-        if (BuildConfig.DEBUG) {
+        if (ENABLED) {
             Log.d(tag, message);
         }
     }
 
     public static void e(@Nullable final Throwable e) {
-        if (BuildConfig.DEBUG) {
+        if (ENABLED) {
             e("error <> ", e);
         }
     }
 
     public static void e(@NonNull final Object... o) {
-        if (BuildConfig.DEBUG) {
+        if (ENABLED) {
             StringBuilder builder = new StringBuilder("<> ");
             for (Object object : o) {
                 builder.append(object);
@@ -32,7 +34,7 @@ public class L {
     }
 
     private static void e(@Nullable final String message, @Nullable final Throwable e) {
-        if (BuildConfig.DEBUG) {
+        if (ENABLED) {
             StackTraceElement element = trace("e");
             String className;
             StringBuilder builder = new StringBuilder();

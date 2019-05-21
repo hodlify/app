@@ -17,6 +17,7 @@ enum class Coin constructor(val ticker: String, val title: String, @param:Drawab
     XEM("XEM", "Nem", R.drawable.xem),
     XLM("XLM", "Stellar", R.drawable.xlm),
     ADA("ADA", "Cardano", R.drawable.ada),
+    TRX("TRX", "Tron", R.drawable.trx),
     NEO("NEO", "Neo", R.drawable.neo),
     ZEC("ZEC", "ZCash", R.drawable.zec),
     DOGE("DOGE", "Doge", R.drawable.doge);

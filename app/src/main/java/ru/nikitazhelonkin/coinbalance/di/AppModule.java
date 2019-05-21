@@ -17,33 +17,34 @@ import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.jackson.JacksonConverterFactory;
 import ru.nikitazhelonkin.coinbalance.BuildConfig;
+import ru.nikitazhelonkin.coinbalance.data.api.coin.TRXApiService;
 import ru.nikitazhelonkin.coinbalance.data.api.interceptor.LoggingInterceptor;
 import ru.nikitazhelonkin.coinbalance.data.api.response.DogeApiService;
 import ru.nikitazhelonkin.coinbalance.data.api.service.CryptoCompareApiService;
-import ru.nikitazhelonkin.coinbalance.data.api.service.coin.AdaApiService;
-import ru.nikitazhelonkin.coinbalance.data.api.service.coin.BCHChainApiService;
-import ru.nikitazhelonkin.coinbalance.data.api.service.coin.BTCApiService;
-import ru.nikitazhelonkin.coinbalance.data.api.service.coin.ChainsoApiService;
-import ru.nikitazhelonkin.coinbalance.data.api.service.coin.ChainzApiService;
-import ru.nikitazhelonkin.coinbalance.data.api.service.coin.ETCApiService;
-import ru.nikitazhelonkin.coinbalance.data.api.service.coin.ETHApiService;
-import ru.nikitazhelonkin.coinbalance.data.api.service.coin.EthplorerApiService;
-import ru.nikitazhelonkin.coinbalance.data.api.service.coin.GasTrackerApiService;
-import ru.nikitazhelonkin.coinbalance.data.api.service.coin.NEMApiService;
-import ru.nikitazhelonkin.coinbalance.data.api.service.coin.NeoScanApiService;
-import ru.nikitazhelonkin.coinbalance.data.api.service.coin.XLMApiService;
-import ru.nikitazhelonkin.coinbalance.data.api.service.coin.XRPApiService;
-import ru.nikitazhelonkin.coinbalance.data.api.service.coin.ZChainApiService;
-import ru.nikitazhelonkin.coinbalance.data.api.service.exchange.BinanceApiService;
-import ru.nikitazhelonkin.coinbalance.data.api.service.exchange.BitfinexApiService;
-import ru.nikitazhelonkin.coinbalance.data.api.service.exchange.BittrexApiService;
-import ru.nikitazhelonkin.coinbalance.data.api.service.exchange.CoinbaseApiService;
-import ru.nikitazhelonkin.coinbalance.data.api.service.exchange.GeminiApiService;
-import ru.nikitazhelonkin.coinbalance.data.api.service.exchange.HitBTCApiService;
-import ru.nikitazhelonkin.coinbalance.data.api.service.exchange.KrakenApiService;
-import ru.nikitazhelonkin.coinbalance.data.api.service.exchange.PoloniexApiService;
-import ru.nikitazhelonkin.coinbalance.data.api.service.exchange.WexApiService;
-import ru.nikitazhelonkin.coinbalance.data.api.service.exchange.YoBitApiService;
+import ru.nikitazhelonkin.coinbalance.data.api.coin.AdaApiService;
+import ru.nikitazhelonkin.coinbalance.data.api.coin.BCHChainApiService;
+import ru.nikitazhelonkin.coinbalance.data.api.coin.BTCApiService;
+import ru.nikitazhelonkin.coinbalance.data.api.coin.ChainsoApiService;
+import ru.nikitazhelonkin.coinbalance.data.api.coin.ChainzApiService;
+import ru.nikitazhelonkin.coinbalance.data.api.coin.ETCApiService;
+import ru.nikitazhelonkin.coinbalance.data.api.coin.ETHApiService;
+import ru.nikitazhelonkin.coinbalance.data.api.coin.EthplorerApiService;
+import ru.nikitazhelonkin.coinbalance.data.api.coin.GasTrackerApiService;
+import ru.nikitazhelonkin.coinbalance.data.api.coin.NEMApiService;
+import ru.nikitazhelonkin.coinbalance.data.api.coin.NeoScanApiService;
+import ru.nikitazhelonkin.coinbalance.data.api.coin.XLMApiService;
+import ru.nikitazhelonkin.coinbalance.data.api.coin.XRPApiService;
+import ru.nikitazhelonkin.coinbalance.data.api.coin.ZChainApiService;
+import ru.nikitazhelonkin.coinbalance.data.api.exchange.BinanceApiService;
+import ru.nikitazhelonkin.coinbalance.data.api.exchange.BitfinexApiService;
+import ru.nikitazhelonkin.coinbalance.data.api.exchange.BittrexApiService;
+import ru.nikitazhelonkin.coinbalance.data.api.exchange.CoinbaseApiService;
+import ru.nikitazhelonkin.coinbalance.data.api.exchange.GeminiApiService;
+import ru.nikitazhelonkin.coinbalance.data.api.exchange.HitBTCApiService;
+import ru.nikitazhelonkin.coinbalance.data.api.exchange.KrakenApiService;
+import ru.nikitazhelonkin.coinbalance.data.api.exchange.PoloniexApiService;
+import ru.nikitazhelonkin.coinbalance.data.api.exchange.WexApiService;
+import ru.nikitazhelonkin.coinbalance.data.api.exchange.YoBitApiService;
 import ru.nikitazhelonkin.coinbalance.data.db.AppDatabase;
 import ru.nikitazhelonkin.coinbalance.data.db.migration.Migration1_2;
 import ru.nikitazhelonkin.coinbalance.data.db.migration.Migration2_3;
@@ -186,6 +187,13 @@ public class AppModule {
     @NonNull
     XLMApiService provideXLMApiService(OkHttpClient httpClient, ObjectMapper objectMapper) {
         return provideApiService("https://horizon.stellar.org", XLMApiService.class, httpClient, objectMapper);
+    }
+
+    @Provides
+    @Singleton
+    @NonNull
+    TRXApiService provideTRXApiService(OkHttpClient httpClient, ObjectMapper objectMapper) {
+        return provideApiService("https://api.trongrid.io", TRXApiService.class, httpClient, objectMapper);
     }
 
     @Provides
