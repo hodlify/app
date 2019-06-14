@@ -1,38 +1,38 @@
 package ru.nikitazhelonkin.coinbalance.data.api.response;
 
 
-import android.arch.persistence.room.Ignore;
-import android.support.annotation.NonNull;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.List;
 
-import ru.nikitazhelonkin.coinbalance.utils.ListUtils;
 
 public class NeoScanBalanceResponse {
 
     private List<Balance> balances;
 
-    @JsonProperty("balance")
-    public void setBalances(List<Balance> balances) {
+    private String address;
+
+    public NeoScanBalanceResponse(  @JsonProperty("balance")List<Balance> balances,  @JsonProperty("address") String address) {
         this.balances = balances;
+        this.address = address;
     }
 
-    @JsonProperty("balance")
+    public String getAddress() {
+        return address;
+    }
+
     public List<Balance> getBalances() {
         return balances;
     }
 
-    @Ignore
-    public String getBalance(@NonNull String asset) {
-        return balances == null ? null : ListUtils.find(balances, b -> asset.equalsIgnoreCase(b.asset)).amount;
-    }
-
     public static class Balance {
+
+        @JsonProperty("asset_symbol")
+        public String assetSymbol;
 
         public String asset;
 
-        public String amount;
+        public float amount;
     }
 }
