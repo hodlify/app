@@ -13,6 +13,7 @@ enum class Coin constructor(val ticker: String, val title: String, @param:Drawab
     ETC("ETC", "Ethereum Classic", R.drawable.etc),
     LTC("LTC", "Litecoin", R.drawable.ltc),
     XRP("XRP", "Ripple", R.drawable.xrp),
+    BNB("BNB", "Binance Coin", R.drawable.bnb),
     DASH("DASH", "Dash", R.drawable.dash),
     XEM("XEM", "Nem", R.drawable.xem),
     XLM("XLM", "Stellar", R.drawable.xlm),

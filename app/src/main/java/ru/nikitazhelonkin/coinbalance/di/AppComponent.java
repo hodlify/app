@@ -6,6 +6,7 @@ import android.content.Context;
 import javax.inject.Singleton;
 
 import dagger.Component;
+import ru.nikitazhelonkin.coinbalance.data.api.coin.BNBApiService;
 import ru.nikitazhelonkin.coinbalance.data.api.coin.TRXApiService;
 import ru.nikitazhelonkin.coinbalance.data.api.response.DogeApiService;
 import ru.nikitazhelonkin.coinbalance.data.api.service.CryptoCompareApiService;
@@ -62,6 +63,8 @@ public interface AppComponent {
     ChainzApiService chainzApiService();
 
     ChainsoApiService chainsoApiService();
+
+    BNBApiService bnbApiService();
 
     XRPApiService xrpApiService();
 
