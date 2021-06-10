@@ -25,6 +25,7 @@ public class ApiClientProvider {
     private ZChainApiService mZChainApiService;
     private TRXApiService mTRXApiService;
     private BNBApiService mBNBApiService;
+    private DotApiService mDotApiService;
 
     @Inject
     public ApiClientProvider(BTCApiService btcApiService,
@@ -43,7 +44,8 @@ public class ApiClientProvider {
                              NeoScanApiService neoScanApiService,
                              ZChainApiService zChainApiService,
                              TRXApiService trxApiService,
-                             BNBApiService bnbApiService) {
+                             BNBApiService bnbApiService,
+                             DotApiService dotApiService) {
         mBTCApiService = btcApiService;
         mETHApiService = ethApiService;
         mEthplorerApiService = ethplorerApiService;
@@ -61,6 +63,7 @@ public class ApiClientProvider {
         mGasTrackerApiService = gasTrackerApiService;
         mTRXApiService = trxApiService;
         mBNBApiService = bnbApiService;
+        mDotApiService = dotApiService;
     }
 
     public ApiClient provide(String coinTicker) {
@@ -95,6 +98,8 @@ public class ApiClientProvider {
                 return new TRXApiClient(mTRXApiService);
             case "BNB":
                 return new BNBApiClient(mBNBApiService);
+            case "DOT":
+                return new DotApiClient(mDotApiService);
         }
         throw new IllegalArgumentException("Coin " + coinTicker + " is unsupported");
     }

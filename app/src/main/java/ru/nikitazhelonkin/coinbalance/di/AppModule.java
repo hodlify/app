@@ -23,6 +23,7 @@ import ru.nikitazhelonkin.coinbalance.data.api.coin.BNBApiService;
 import ru.nikitazhelonkin.coinbalance.data.api.coin.BTCApiService;
 import ru.nikitazhelonkin.coinbalance.data.api.coin.ChainsoApiService;
 import ru.nikitazhelonkin.coinbalance.data.api.coin.ChainzApiService;
+import ru.nikitazhelonkin.coinbalance.data.api.coin.DotApiService;
 import ru.nikitazhelonkin.coinbalance.data.api.coin.ETCApiService;
 import ru.nikitazhelonkin.coinbalance.data.api.coin.ETHApiService;
 import ru.nikitazhelonkin.coinbalance.data.api.coin.EthplorerApiService;
@@ -209,6 +210,13 @@ public class AppModule {
     @NonNull
     BNBApiService provideBNBApiService(OkHttpClient httpClient, ObjectMapper objectMapper) {
         return provideApiService("https://api.bscscan.com", BNBApiService.class, httpClient, objectMapper);
+    }
+
+    @Provides
+    @Singleton
+    @NonNull
+    DotApiService provideDotApiService(OkHttpClient httpClient, ObjectMapper objectMapper){
+        return provideApiService("https://polkadot.api.subscan.io", DotApiService.class, httpClient, objectMapper);
     }
 
     @Provides

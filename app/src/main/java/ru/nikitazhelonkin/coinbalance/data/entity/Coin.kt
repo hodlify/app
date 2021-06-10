@@ -21,7 +21,8 @@ enum class Coin constructor(val ticker: String, val title: String, @param:Drawab
     TRX("TRX", "Tron", R.drawable.trx),
     NEO("NEO", "Neo", R.drawable.neo),
     ZEC("ZEC", "ZCash", R.drawable.zec),
-    DOGE("DOGE", "Doge", R.drawable.doge);
+    DOGE("DOGE", "Doge", R.drawable.doge),
+    DOT("DOT", "Polkadot", R.drawable.dot);
 
     override fun toString(): String {
         return ticker

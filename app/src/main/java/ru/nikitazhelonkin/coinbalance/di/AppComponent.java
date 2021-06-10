@@ -7,6 +7,7 @@ import javax.inject.Singleton;
 
 import dagger.Component;
 import ru.nikitazhelonkin.coinbalance.data.api.coin.BNBApiService;
+import ru.nikitazhelonkin.coinbalance.data.api.coin.DotApiService;
 import ru.nikitazhelonkin.coinbalance.data.api.coin.TRXApiService;
 import ru.nikitazhelonkin.coinbalance.data.api.response.DogeApiService;
 import ru.nikitazhelonkin.coinbalance.data.api.service.CryptoCompareApiService;
@@ -57,6 +58,8 @@ public interface AppComponent {
     BTCApiService btcApiService();
 
     ETHApiService ethApiService();
+
+    DotApiService dotApiService();
 
     EthplorerApiService ethplorerApiService();
 
