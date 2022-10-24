@@ -31,7 +31,7 @@ public class DonatePresenter extends MvpBasePresenter<DonateView> implements
     @Override
     public void onAttach(DonateView view, @Nullable Bundle savedInstanceState) {
         super.onAttach(view, savedInstanceState);
-        mBillingManager = new BillingManager((Activity) view.getContext(), BillingConstants.BASE_64_ENCODED_PUBLIC_KEY, this);
+        mBillingManager = new BillingManager((Activity) view.getContext(), BillingConstants.INSTANCE.getBASE_64_ENCODED_PUBLIC_KEY(), this);
         mBillingManager.setup();
     }
 
@@ -45,17 +45,17 @@ public class DonatePresenter extends MvpBasePresenter<DonateView> implements
 
     public void donate1Dollar() {
         if (mBillingManager == null) return;
-        mBillingManager.initiatePurchaseFlow(BillingConstants.SKU_DONATE_1, BillingClient.SkuType.INAPP);
+        mBillingManager.initiatePurchaseFlow(BillingConstants.INSTANCE.getSKU_DONATE_1(), BillingClient.SkuType.INAPP);
     }
 
     public void donate2Dollar() {
         if (mBillingManager == null) return;
-        mBillingManager.initiatePurchaseFlow(BillingConstants.SKU_DONATE_2, BillingClient.SkuType.INAPP);
+        mBillingManager.initiatePurchaseFlow(BillingConstants.INSTANCE.getSKU_DONATE_2(), BillingClient.SkuType.INAPP);
     }
 
     public void donate5Dollar() {
         if (mBillingManager == null) return;
-        mBillingManager.initiatePurchaseFlow(BillingConstants.SKU_DONATE_5, BillingClient.SkuType.INAPP);
+        mBillingManager.initiatePurchaseFlow(BillingConstants.INSTANCE.getSKU_DONATE_5(), BillingClient.SkuType.INAPP);
     }
 
     @Override
@@ -80,9 +80,9 @@ public class DonatePresenter extends MvpBasePresenter<DonateView> implements
     public void onPurchasesUpdated(List<Purchase> purchases) {
         for (Purchase purchase : purchases) {
             switch (purchase.getSku()) {
-                case BillingConstants.SKU_DONATE_1:
-                case BillingConstants.SKU_DONATE_2:
-                case BillingConstants.SKU_DONATE_5:
+                case BillingConstants.INSTANCE.getSKU_DONATE_1():
+                case BillingConstants.INSTANCE.getSKU_DONATE_2():
+                case BillingConstants.INSTANCE.getSKU_DONATE_5():
                     L.e("Item purchased. Consuming it.");
                     mBillingManager.consumeAsync(purchase.getPurchaseToken());
                     break;
