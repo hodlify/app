@@ -3,8 +3,8 @@ package ru.nikitazhelonkin.coinbalance.mvp;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatDialogFragment;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatDialogFragment;
 
 public abstract class MvpDialogFragment<P extends MvpPresenter<V>, V extends MvpView> extends AppCompatDialogFragment
         implements MvpView {

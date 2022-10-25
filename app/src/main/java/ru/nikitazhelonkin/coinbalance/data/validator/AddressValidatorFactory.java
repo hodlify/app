@@ -1,7 +1,7 @@
 package ru.nikitazhelonkin.coinbalance.data.validator;
 
 
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 public class AddressValidatorFactory {
 

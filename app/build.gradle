@@ -6,15 +6,15 @@ def keystoreProperties = new Properties()
 keystoreProperties.load(new FileInputStream(file("keystore.properties")))
 
 android {
-    compileSdkVersion 29
+    compileSdkVersion 31
     defaultConfig {
         applicationId "app.hodlify"
         minSdkVersion 21
-        targetSdkVersion 29
+        targetSdkVersion 31
         versionCode 22
         versionName "1.0.${versionCode}"
         archivesBaseName = "hodlify-${versionName}"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
 
         buildConfigField "String", "YANDEX_METRICA_API_KEY", '"3b1bb4cf-e707-4a22-bdc2-f87a69f29128"'
     }
@@ -48,19 +48,19 @@ ext.versions = [
         androidSupport : '28.0.0-rc01',
         retrofit: '2.2.0',
         rxJava: '2.0.1',
-        butterKnife: '8.8.1',
-        dagger: '2.7',
-        parceler: '1.0.4'
+        butterKnife: '10.2.3',
+        dagger: '2.38',
+        parceler: '1.1.12'
 ]
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "com.android.support:appcompat-v7:$versions.androidSupport"
-    implementation "com.android.support:design:$versions.androidSupport"
-    implementation "com.android.support:cardview-v7:$versions.androidSupport"
-    implementation "com.android.support:support-media-compat:$versions.androidSupport"
-    implementation "com.android.support:support-v4:$versions.androidSupport"
-    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.media:media:1.0.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
 
     implementation 'com.android.billingclient:billing:1.1'
 
@@ -92,10 +92,10 @@ dependencies {
     kapt "com.jakewharton:butterknife-compiler:$versions.butterKnife"
 
     // Room
-    implementation "android.arch.persistence.room:runtime:1.0.0"
-    kapt "android.arch.persistence.room:compiler:1.0.0"
+    implementation 'androidx.room:room-runtime:2.4.0'
+    kapt 'androidx.room:room-compiler:2.4.0'
     // RxJava support for Room
-    implementation "android.arch.persistence.room:rxjava2:1.0.0"
+    implementation 'androidx.room:room-rxjava2:2.4.0'
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 
@@ -107,6 +107,6 @@ dependencies {
 
     testImplementation 'junit:junit:4.12'
     testImplementation 'org.mockito:mockito-core:2.8.9'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
 }

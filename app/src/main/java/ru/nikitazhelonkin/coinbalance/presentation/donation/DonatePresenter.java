@@ -3,7 +3,7 @@ package ru.nikitazhelonkin.coinbalance.presentation.donation;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 import com.android.billingclient.api.BillingClient;
 import com.android.billingclient.api.Purchase;

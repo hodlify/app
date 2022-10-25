@@ -2,12 +2,12 @@ package ru.nikitazhelonkin.coinbalance.ui.widget;
 
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.support.annotation.NonNull;
-import android.support.annotation.StringRes;
-import android.support.annotation.StyleRes;
-import android.support.v4.content.res.ResourcesCompat;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.view.ContextThemeWrapper;
+import androidx.annotation.NonNull;
+import androidx.annotation.StringRes;
+import androidx.annotation.StyleRes;
+import androidx.core.content.res.ResourcesCompat;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.view.ContextThemeWrapper;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.Spanned;
@@ -69,7 +69,7 @@ public class AlertDialogBuilder extends AlertDialog.Builder {
         if (isRealResId(resId)) {
             return resId;
         } else {
-            return resolveAttribute(context, android.support.v7.appcompat.R.attr.alertDialogTheme);
+            return resolveAttribute(context, R.attr.alertDialogTheme);
         }
     }
 

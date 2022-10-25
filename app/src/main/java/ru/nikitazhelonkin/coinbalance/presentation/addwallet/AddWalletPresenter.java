@@ -3,7 +3,7 @@ package ru.nikitazhelonkin.coinbalance.presentation.addwallet;
 
 import android.database.sqlite.SQLiteConstraintException;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 import javax.inject.Inject;
 

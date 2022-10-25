@@ -2,7 +2,7 @@ package ru.nikitazhelonkin.coinbalance.presentation.walletdetail;
 
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 import javax.inject.Inject;
 
@@ -10,9 +10,7 @@ import io.reactivex.disposables.Disposable;
 import ru.nikitazhelonkin.coinbalance.R;
 import ru.nikitazhelonkin.coinbalance.data.entity.Wallet;
 import ru.nikitazhelonkin.coinbalance.data.entity.WalletDetailViewModel;
-import ru.nikitazhelonkin.coinbalance.data.repository.WalletRepository;
 import ru.nikitazhelonkin.coinbalance.data.system.ClipboardManager;
-import ru.nikitazhelonkin.coinbalance.di.WalletDetailModule;
 import ru.nikitazhelonkin.coinbalance.domain.WalletDetailInteractor;
 import ru.nikitazhelonkin.coinbalance.mvp.MvpBasePresenter;
 import ru.nikitazhelonkin.coinbalance.utils.L;

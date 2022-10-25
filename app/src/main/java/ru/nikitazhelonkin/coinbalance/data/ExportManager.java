@@ -4,7 +4,7 @@ package ru.nikitazhelonkin.coinbalance.data;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Environment;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;

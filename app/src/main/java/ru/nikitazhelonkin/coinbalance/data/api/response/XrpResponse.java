@@ -1,7 +1,7 @@
 package ru.nikitazhelonkin.coinbalance.data.api.response;
 
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

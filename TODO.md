@@ -1,0 +1,5 @@
+- Convert to kotlin
+- Butterknife -> ViewBinding
+- RxJava -> Kotlin Coroutines
+- MVP -> MVVM
+- View -> COMPOSE

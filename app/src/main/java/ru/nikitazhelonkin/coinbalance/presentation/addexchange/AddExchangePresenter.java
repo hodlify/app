@@ -3,7 +3,7 @@ package ru.nikitazhelonkin.coinbalance.presentation.addexchange;
 
 import android.database.sqlite.SQLiteConstraintException;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 import javax.inject.Inject;
 
@@ -14,7 +14,6 @@ import ru.nikitazhelonkin.coinbalance.data.exception.ServiceNotSupportedExceptio
 import ru.nikitazhelonkin.coinbalance.data.system.SystemManager;
 import ru.nikitazhelonkin.coinbalance.domain.AddExchangeInteractor;
 import ru.nikitazhelonkin.coinbalance.mvp.MvpBasePresenter;
-import ru.nikitazhelonkin.coinbalance.utils.L;
 import ru.nikitazhelonkin.coinbalance.utils.rx.scheduler.RxSchedulerProvider;
 
 public class AddExchangePresenter extends MvpBasePresenter<AddExchangeView> {

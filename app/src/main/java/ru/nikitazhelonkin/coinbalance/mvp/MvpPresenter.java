@@ -2,7 +2,7 @@ package ru.nikitazhelonkin.coinbalance.mvp;
 
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 public interface MvpPresenter<V extends MvpView> {
 

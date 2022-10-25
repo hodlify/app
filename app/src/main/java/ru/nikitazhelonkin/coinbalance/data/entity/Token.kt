@@ -1,7 +1,7 @@
 package ru.nikitazhelonkin.coinbalance.data.entity
 
 
-import android.arch.persistence.room.*
+import androidx.room.*
 
 @Entity(indices = arrayOf(Index(name = "wallet_index", value = ["wallet_address"])),
         foreignKeys = arrayOf(ForeignKey(

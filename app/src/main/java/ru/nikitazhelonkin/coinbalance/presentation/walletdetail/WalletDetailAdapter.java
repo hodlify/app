@@ -1,14 +1,13 @@
 package ru.nikitazhelonkin.coinbalance.presentation.walletdetail;
 
 
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView;
 import android.text.style.ForegroundColorSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import java.util.Currency;
 import java.util.Locale;
 
 import butterknife.BindColor;
@@ -23,7 +22,6 @@ import ru.nikitazhelonkin.coinbalance.data.entity.WalletDetailViewModel;
 import ru.nikitazhelonkin.coinbalance.ui.text.Spanner;
 import ru.nikitazhelonkin.coinbalance.utils.AppNumberFormatter;
 import ru.nikitazhelonkin.coinbalance.utils.CurrencySymbol;
-import ru.nikitazhelonkin.coinbalance.utils.L;
 
 public class WalletDetailAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 

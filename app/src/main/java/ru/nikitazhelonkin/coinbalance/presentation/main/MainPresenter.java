@@ -3,7 +3,7 @@ package ru.nikitazhelonkin.coinbalance.presentation.main;
 
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 import com.yandex.metrica.YandexMetrica;
 

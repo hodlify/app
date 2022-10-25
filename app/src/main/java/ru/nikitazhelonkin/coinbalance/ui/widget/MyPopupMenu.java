@@ -3,17 +3,19 @@ package ru.nikitazhelonkin.coinbalance.ui.widget;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.support.annotation.MenuRes;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v7.view.SupportMenuInflater;
-import android.support.v7.view.menu.MenuBuilder;
-import android.support.v7.view.menu.MenuPopupHelper;
+import androidx.annotation.MenuRes;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.view.SupportMenuInflater;
+import androidx.appcompat.view.menu.MenuBuilder;
+import androidx.appcompat.view.menu.MenuPopupHelper;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+
+import ru.nikitazhelonkin.coinbalance.R;
 
 @SuppressLint("RestrictedApi")
 public class MyPopupMenu {
@@ -30,7 +32,7 @@ public class MyPopupMenu {
     }
 
     public MyPopupMenu(Context context, View anchor, int gravity) {
-        this(context, anchor, gravity, android.support.v7.appcompat.R.attr.popupMenuStyle, 0);
+        this(context, anchor, gravity, R.attr.popupMenuStyle, 0);
     }
 
     @SuppressLint("RestrictedApi")

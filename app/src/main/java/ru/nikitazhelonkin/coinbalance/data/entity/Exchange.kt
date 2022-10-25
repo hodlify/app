@@ -1,7 +1,7 @@
 package ru.nikitazhelonkin.coinbalance.data.entity
 
 
-import android.arch.persistence.room.*
+import androidx.room.*
 import ru.nikitazhelonkin.coinbalance.data.db.ExchangeServiceConverter
 
 @Entity(indices = [(Index(name = "exchange_index", value = arrayOf("service", "api_key"), unique = true))])

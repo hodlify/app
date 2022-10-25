@@ -1,8 +1,8 @@
 package ru.nikitazhelonkin.coinbalance.presentation.main;
 
 
-import android.support.annotation.Nullable;
-import android.support.v7.util.DiffUtil;
+import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.DiffUtil;
 
 import ru.nikitazhelonkin.coinbalance.data.entity.MainViewModel;
 

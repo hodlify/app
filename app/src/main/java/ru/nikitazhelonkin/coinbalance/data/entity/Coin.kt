@@ -1,7 +1,7 @@
 package ru.nikitazhelonkin.coinbalance.data.entity
 
 
-import android.support.annotation.DrawableRes
+import androidx.annotation.DrawableRes
 
 import ru.nikitazhelonkin.coinbalance.R
 

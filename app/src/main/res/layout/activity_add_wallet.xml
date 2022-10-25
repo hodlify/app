@@ -7,7 +7,7 @@
 
     <include layout="@layout/app_bar" />
 
-    <android.support.v7.widget.CardView
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         style="@style/CardViewStyle"
@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <android.support.v7.widget.AppCompatSpinner
+            <androidx.appcompat.widget.AppCompatSpinner
                 android:id="@+id/coin_spinner"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -31,7 +31,7 @@
                 android:layout_marginRight="12dp"
                 android:layout_marginTop="24dp">
 
-                <android.support.design.widget.TextInputLayout
+                <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/wallet_public_address"
@@ -47,7 +47,7 @@
                         android:singleLine="true"
                         android:textSize="14sp" />
 
-                </android.support.design.widget.TextInputLayout>
+                </com.google.android.material.textfield.TextInputLayout>
 
                 <ImageView
                     android:id="@+id/address_clear_btn"
@@ -79,7 +79,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="12dp">
 
-                <android.support.design.widget.TextInputLayout
+                <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/wallet_name"
@@ -95,7 +95,7 @@
                         android:singleLine="true"
                         android:textSize="14sp" />
 
-                </android.support.design.widget.TextInputLayout>
+                </com.google.android.material.textfield.TextInputLayout>
 
                 <ImageView
                     android:id="@+id/alis_clear_btn"
@@ -111,7 +111,7 @@
 
             </FrameLayout>
 
-            <android.support.v7.widget.AppCompatButton
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/submit_btn"
                 style="@style/Button.Borderless"
                 android:layout_width="wrap_content"
@@ -126,7 +126,7 @@
         </LinearLayout>
 
 
-    </android.support.v7.widget.CardView>
+    </androidx.cardview.widget.CardView>
 
 
 

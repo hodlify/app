@@ -1,14 +1,13 @@
 package ru.nikitazhelonkin.coinbalance.presentation.exchangedetail;
 
 
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView;
 import android.text.style.ForegroundColorSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import java.util.Currency;
 import java.util.List;
 import java.util.Locale;
 
