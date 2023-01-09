@@ -46,8 +46,16 @@ public class DigestUtil {
     }
 
     public static byte[] sha256(String msg) {
+        return digest(msg, "SHA-256");
+    }
+
+    public static byte[] sha512(String msg) {
+        return digest(msg, "SHA-512");
+    }
+
+    public static byte[] digest(String msg, String algo) {
         try {
-            MessageDigest digest = MessageDigest.getInstance("SHA-256");
+            MessageDigest digest = MessageDigest.getInstance(algo);
             return digest.digest(msg.getBytes(StandardCharsets.UTF_8));
         } catch (NoSuchAlgorithmException e) {
             return null;
@@ -56,6 +64,10 @@ public class DigestUtil {
 
     public static String sha256String(String msg) {
         return bytesToHex(sha256(msg));
+    }
+
+    public static String sha512String(String msg) {
+        return bytesToHex(sha512(msg));
     }
 
     private static String bytesToHex(byte[] bytes) {

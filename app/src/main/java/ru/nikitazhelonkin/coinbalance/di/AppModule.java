@@ -244,7 +244,7 @@ public class AppModule {
     @Singleton
     @NonNull
     BittrexApiService provideBittrexApiService(OkHttpClient httpClient, ObjectMapper objectMapper) {
-        return provideApiService("https://bittrex.com", BittrexApiService.class, httpClient, objectMapper);
+        return provideApiService("https://api.bittrex.com", BittrexApiService.class, httpClient, objectMapper);
     }
 
     @Provides

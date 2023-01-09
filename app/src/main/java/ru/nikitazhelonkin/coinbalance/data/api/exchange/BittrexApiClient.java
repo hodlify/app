@@ -5,8 +5,7 @@ import java.util.HashMap;
 
 import io.reactivex.Single;
 import ru.nikitazhelonkin.coinbalance.data.api.HttpErrorTransformer;
-import ru.nikitazhelonkin.coinbalance.data.api.exchange.BittrexApiService;
-import ru.nikitazhelonkin.coinbalance.data.exception.ApiError;
+import ru.nikitazhelonkin.coinbalance.data.api.response.BittrexBalancesResponse;
 import ru.nikitazhelonkin.coinbalance.utils.DigestUtil;
 
 public class BittrexApiClient implements ExchangeApiClient {
@@ -19,17 +18,12 @@ public class BittrexApiClient implements ExchangeApiClient {
 
     @Override
     public Single<HashMap<String, Float>> getBalances(String apiKey, String apiSecret) {
-        String nonce = String.valueOf(System.currentTimeMillis());
-        String url = String.format("https://bittrex.com/api/v1.1/account/getbalances?apikey=%s&nonce=%s", apiKey, nonce);
-        String signature = DigestUtil.hmacString(url, apiSecret, "HmacSHA512");
-        return mApiService.balances(apiKey, nonce, signature)
-                .map(response -> {
-                    if (response.isSuccess()) {
-                        return response.getNonZeroBalances();
-                    } else {
-                        throw new ApiError(response.getMessage());
-                    }
-                })
+        String timestamp = String.valueOf(System.currentTimeMillis());
+        String contentHash = DigestUtil.sha512String("");
+        String preSignString = timestamp + "https://api.bittrex.com/v3/balances" + "GET" + contentHash;
+        String signature = DigestUtil.hmacString(preSignString, apiSecret, "HmacSHA512");
+        return mApiService.balances(apiKey, timestamp, contentHash, signature)
+                .map(BittrexBalancesResponse::getNonZeroBalances)
                 .compose(new HttpErrorTransformer<>());
     }
 }
