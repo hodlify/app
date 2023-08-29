@@ -11,7 +11,7 @@ android {
         applicationId "app.hodlify"
         minSdkVersion 21
         targetSdkVersion 33
-        versionCode 23
+        versionCode 24
         versionName "1.0.${versionCode}"
         archivesBaseName = "hodlify-${versionName}"
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
@@ -59,8 +59,6 @@ dependencies {
 
     implementation 'androidx.media:media:1.6.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-
-    implementation 'com.android.billingclient:billing:1.1'
 
     implementation 'com.yandex.android:mobmetricalib:3.2.1'
 

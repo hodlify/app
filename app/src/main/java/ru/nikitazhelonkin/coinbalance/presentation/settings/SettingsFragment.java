@@ -30,7 +30,6 @@ import ru.nikitazhelonkin.coinbalance.data.AppSettings;
 import ru.nikitazhelonkin.coinbalance.data.prefs.Prefs;
 import ru.nikitazhelonkin.coinbalance.di.DaggerPresenterComponent;
 import ru.nikitazhelonkin.coinbalance.mvp.MvpFragment;
-import ru.nikitazhelonkin.coinbalance.presentation.donation.DonateDialogFragment;
 import ru.nikitazhelonkin.coinbalance.ui.adapter.RecyclerItemsAdapter;
 import ru.nikitazhelonkin.coinbalance.ui.widget.AlertDialogBuilder;
 import ru.nikitazhelonkin.coinbalance.ui.widget.AppToast;
@@ -131,9 +130,6 @@ public class SettingsFragment extends MvpFragment<SettingsPresenter, SettingsVie
                 return;
             case R.id.settings_report:
                 onReportClick();
-                return;
-            case R.id.settings_donation:
-                onDonationClick();
         }
     }
 
@@ -191,10 +187,6 @@ public class SettingsFragment extends MvpFragment<SettingsPresenter, SettingsVie
                 getString(R.string.report_email),
                 getString(R.string.report_subject, BuildConfig.VERSION_NAME,
                         BuildConfig.VERSION_CODE));
-    }
-
-    private void onDonationClick() {
-        DonateDialogFragment.create().show(getFragmentManager(), "donate");
     }
 
     private void updateItems() {

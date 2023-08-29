@@ -40,8 +40,6 @@ public class SettingsAdapter extends RecyclerItemsAdapter {
                 context.getString(R.string.settings_share_app)));
         items.add(new DefaultItem(R.id.settings_rate, R.drawable.ic_rate_24dp,
                 context.getString(R.string.settings_rate_app)));
-        items.add(new DefaultItem(R.id.settings_donation, R.drawable.ic_donation_24dp,
-                context.getString(R.string.settings_donation)));
         setData(items);
     }
 
