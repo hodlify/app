@@ -36,11 +36,9 @@ public class ExportManager {
     @SuppressWarnings("ResultOfMethodCallIgnored")
     @Nullable
     private File getExportFile() {
-        File rootDir = Environment.getExternalStorageDirectory();
+        File rootDir = mContext.getExternalFilesDir(null);
         if (rootDir != null) {
-            File appDir = new File(rootDir, "CoinBalance");
-            appDir.mkdirs();
-            return new File(appDir, "coin_balance_config.json");
+            return new File(rootDir, "hodlify_config.json");
         }
         return null;
     }

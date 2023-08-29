@@ -6,11 +6,11 @@ def keystoreProperties = new Properties()
 keystoreProperties.load(new FileInputStream(file("keystore.properties")))
 
 android {
-    compileSdkVersion 32
+    compileSdkVersion 33
     defaultConfig {
         applicationId "app.hodlify"
         minSdkVersion 21
-        targetSdkVersion 31
+        targetSdkVersion 33
         versionCode 22
         versionName "1.0.${versionCode}"
         archivesBaseName = "hodlify-${versionName}"

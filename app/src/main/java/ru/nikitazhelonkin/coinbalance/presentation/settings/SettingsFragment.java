@@ -4,6 +4,7 @@ import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -207,6 +208,9 @@ public class SettingsFragment extends MvpFragment<SettingsPresenter, SettingsVie
 
 
     private boolean requestStoragePermissionWithCheck() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            return true;
+        }
         if (!isPermissionGranted(Manifest.permission.READ_EXTERNAL_STORAGE)) {
             if (shouldShowRequestPermissionRationale(Manifest.permission.READ_EXTERNAL_STORAGE)) {
                 new AlertDialogBuilder(getContext())
